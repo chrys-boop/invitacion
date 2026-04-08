@@ -68,22 +68,36 @@ body {
 
 /* CONTENIDO */
 #contenido {
-  opacity: 0;
+ opacity: 0; /* Inicia invisible */
   pointer-events: none;
   max-width: 700px;
   margin: 40px auto;
-  padding: 0 20px;
+  
+  /* Efecto Cristal */
+  background: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
+  padding: 30px 20px; /* Un solo padding correcto */
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15);
+  
+  /* Filtros de desenfoque */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* OBLIGATORIO para iPhone/Mac */
+  
   text-align: center;
   transition: opacity 1.5s ease;
   position: relative;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.75); /* Fondo blanco al 75% de transparencia */
-  padding: 30px 20px; /* Espacio para que el texto respire */
-  border-radius: 20px; /* Bordes redondeados elegantes */
-  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15); /* Una sombrita rosa sutil */
-  backdrop-filter: blur(4px); /* Hace que los globos que pasan por detrás se vean un poco borrosos */
+  
+  /* Truco para forzar que el texto no desaparezca */
+  transform: translateZ(0); 
 }
+
+/* 2. LA REGLA QUE HACE QUE APAREZCA (¡No la borres!) */
+#contenido.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
+
 
 #contenido.visible {
   opacity: 1;
@@ -99,7 +113,7 @@ p {
   color: #444;
   font-size: 18px;
   margin: 12px 0;
-  font-weight: 600;
+  
 }
 
 strong {
