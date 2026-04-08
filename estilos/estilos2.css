@@ -159,6 +159,10 @@ strong {
 
 /* DISEÑO RESPONSIVO (MÓVILES) */
 @media (max-width: 600px) {
+  #contenido {
+    margin: 20px 15px; /* Le da un pequeño margen a los lados en el celular */
+    padding: 25px 15px;
+  }
   #sobre {
     width: 85%; /* Evita que el sobre se salga de la pantalla en celulares pequeños */
   }
@@ -185,7 +189,7 @@ strong {
   height: 100vh;
   pointer-events: none;
   overflow: visible;
-  z-index: 5;
+  z-index: 20;
 }
 
 .globo {
