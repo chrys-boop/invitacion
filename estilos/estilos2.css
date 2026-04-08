@@ -5,6 +5,9 @@ body {
   overflow: hidden;
   background: linear-gradient(135deg, #ffd6e0, #fff0f5, #d6ecff);
   transition: background 1.5s ease;
+  min-height: 100vh; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
 }
 
 /* SOBRE */
